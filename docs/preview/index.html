@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sentinel</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--fg:#16181d;--mute:#6b6f78;--line:#dedbd2;--card:#fff;--red:#b3261e;--amb:#a15c00;--grn:#1e6b3a;--acc:#1f3b6e}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#111317;--fg:#e8e6e1;--mute:#8d929b;--line:#2a2e35;--card:#181b20;--red:#ef7a72;--amb:#e0a24a;--grn:#6cc28c;--acc:#8fb0ea}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 60px}
+header h1{font:600 26px "IBM Plex Mono",monospace;margin:0;letter-spacing:-.5px}header p{color:var(--mute);margin:4px 0 24px}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+th{font-weight:600;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.04em}th:first-child,td:first-child,.l{text-align:left}
+.num{font-family:"IBM Plex Mono",monospace}.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;margin:0 0 18px;overflow-x:auto}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;font-weight:600;border:1px solid currentColor}
+.underweight,.hi{color:var(--red)}.neutral,.mid{color:var(--amb)}.overweight,.lo{color:var(--grn)}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.k{color:var(--mute);font-size:12px}.v{font:600 20px "IBM Plex Mono",monospace}
+.bar{height:10px;background:var(--acc);border-radius:2px}.small{font-size:13px;color:var(--mute)}
+</style></head><body><div class="wrap">
+<header><h1>SENTINEL</h1><p>Autonomous US high-yield credit monitor · last run 2026-10-19 · LLM: mock (demo data)</p></header>
+<div class="card"><h2>Universe, ranked by risk score</h2><table>
+<tr><th>Issuer</th><th>Sector</th><th>FY</th><th>Net lev.</th><th>Int. cover</th><th>FCF</th><th>Risk</th><th>Δ</th><th>Stance</th></tr>
+<tr>
+<td><a href="issuer/DEMO2.html"><b>DEMO2</b></a> <span class="small">Demo Telecom</span></td>
+<td class="l small">Telecom</td><td class="num">2025</td>
+<td class="num">4.9x</td><td class="num">2.4x</td>
+<td class="num">$-400m</td>
+<td class="num hi"><b>68</b></td>
+<td class="num">+8</td>
+<td><span class="pill underweight">underweight</span></td></tr><tr>
+<td><a href="issuer/DEMO1.html"><b>DEMO1</b></a> <span class="small">Demo Cruise Co</span></td>
+<td class="l small">Leisure</td><td class="num">2025</td>
+<td class="num">4.2x</td><td class="num">3.9x</td>
+<td class="num">$2.4bn</td>
+<td class="num lo"><b>18</b></td>
+<td class="num">+8</td>
+<td><span class="pill neutral">neutral</span></td></tr>
+</table></div>
+<div class="card"><h2>Call ledger (timestamped, append-only)</h2><table>
+<tr><th>Time (UTC)</th><th>Issuer</th><th>Stance</th><th>Conv.</th><th>Risk</th><th class="l">Reason</th><th>Hash</th></tr>
+<tr><td class="num l">2026-10-19T13:54</td><td>DEMO2</td><td><span class="pill underweight">underweight</span></td>
+<td class="num">3</td><td class="num">68</td><td class="l small">Demo call</td><td class="num small">62f54c57</td></tr>
+<tr><td class="num l">2026-10-19T13:54</td><td>DEMO1</td><td><span class="pill neutral">neutral</span></td>
+<td class="num">3</td><td class="num">18</td><td class="l small">Demo call</td><td class="num small">c2694ef0</td></tr>
+</table></div>
+
+<p class="small">Sentinel is an automated research project. Not investment advice. All figures from SEC EDGAR filings; LLM-extracted figures shown only after deterministic verification.</p>
+</div></body></html>

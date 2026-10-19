@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEMO2 · Sentinel</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--fg:#16181d;--mute:#6b6f78;--line:#dedbd2;--card:#fff;--red:#b3261e;--amb:#a15c00;--grn:#1e6b3a;--acc:#1f3b6e}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#111317;--fg:#e8e6e1;--mute:#8d929b;--line:#2a2e35;--card:#181b20;--red:#ef7a72;--amb:#e0a24a;--grn:#6cc28c;--acc:#8fb0ea}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 60px}
+header h1{font:600 26px "IBM Plex Mono",monospace;margin:0;letter-spacing:-.5px}header p{color:var(--mute);margin:4px 0 24px}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+th{font-weight:600;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.04em}th:first-child,td:first-child,.l{text-align:left}
+.num{font-family:"IBM Plex Mono",monospace}.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;margin:0 0 18px;overflow-x:auto}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;font-weight:600;border:1px solid currentColor}
+.underweight,.hi{color:var(--red)}.neutral,.mid{color:var(--amb)}.overweight,.lo{color:var(--grn)}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.k{color:var(--mute);font-size:12px}.v{font:600 20px "IBM Plex Mono",monospace}
+.bar{height:10px;background:var(--acc);border-radius:2px}.small{font-size:13px;color:var(--mute)}
+</style></head><body><div class="wrap">
+<p><a href="../index.html">← Universe</a></p>
+<header><h1>DEMO2 <span class="pill underweight">underweight</span></h1>
+<p>Demo Telecom · Telecom · FY2025 · as of 2026-10-19</p></header>
+
+<div class="card grid">
+<div><div class="k">Risk score</div><div class="v hi">68</div></div>
+<div><div class="k">Net leverage</div><div class="v">4.9x</div></div>
+<div><div class="k">Interest cover</div><div class="v">2.4x</div></div>
+<div><div class="k">Total debt</div><div class="v">$18.0bn</div></div>
+<div><div class="k">FCF</div><div class="v">$-400m</div></div>
+<div><div class="k">Liquidity / 2y maturities</div><div class="v">27%</div></div></div>
+
+<div class="card"><h2>Memo</h2>
+<p><b>Demo memo (sample data).</b></p><p>Net leverage 4.9x &gt; 4x; Interest cover 2.4x &lt; 3x; Negative free cash flow; Liquidity covers 27% of 2y maturities</p>
+<p class="k">Catalysts</p><ul><li>Refinancing of near-dated maturities</li></ul>
+<p class="k">Risks</p><ul><li>Demand shock</li></ul>
+<p><span class="k">Trade expression:</span> Long secured / short unsecured</p>
+
+<p class="small">Risk drivers: Net leverage 4.9x &gt; 4x; Interest cover 2.4x &lt; 3x; Negative free cash flow; Liquidity covers 27% of 2y maturities</p></div>
+
+<div class="card"><h2>Five-year trend</h2><table><tr><th>FY</th><th>Revenue</th><th>EBITDA</th><th>Debt</th><th>Net lev.</th><th>Int. cover</th><th>FCF</th></tr>
+<tr><td class="num">2025</td><td class="num">$13.0bn</td><td class="num">$3.4bn</td>
+<td class="num">$18.0bn</td><td class="num">4.9x</td><td class="num">2.4x</td><td class="num">$-400m</td></tr></table></div>
+
+
+<div class="card"><h2>Maturity wall</h2><table>
+<tr><td style="width:70px">Y+1</td><td class="l"><div class="bar" style="width:80.0%"></div></td><td class="num" style="width:110px">$2.0bn</td></tr>
+<tr><td style="width:70px">Y+2</td><td class="l"><div class="bar" style="width:100.0%"></div></td><td class="num" style="width:110px">$2.5bn</td></tr></table></div>
+
+<div class="card"><h2>Verified debt stack</h2>
+<table><tr><th>Tranche</th><th>Rank</th><th>Amount</th><th>Coupon</th><th>Maturity</th></tr>
+<tr><td>Secured notes</td><td class="num">1</td><td class="num">$7.2bn</td><td>6.0%</td><td class="num">2029</td></tr><tr><td>Unsecured notes</td><td class="num">2</td><td class="num">$10.8bn</td><td>7.6%</td><td class="num">2031</td></tr></table>
+
+<p class="small">Extraction precision: 67% · reconciles to XBRL debt within 0% (ok)</p>
+<details><summary class="small">Verification log</summary><table><tr><td>Secured notes</td><td class="num">$7.2bn</td><td class="lo">verified</td></tr><tr><td>Unsecured notes</td><td class="num">$10.8bn</td><td class="lo">verified</td></tr><tr><td>Term Loan B</td><td class="num">$500m</td><td class="hi">quote_not_found</td></tr></table></details>
+</div>
+
+<div class="card"><h2>Recovery waterfall (EV = EBITDA × multiple)</h2><table><tr><th>Tranche</th><th>4x</th><th>6x</th><th>8x</th></tr>
+<tr><td>Secured notes</td><td class="num">100%</td><td class="num">100%</td><td class="num">100%</td></tr><tr><td>Unsecured notes</td><td class="num">59%</td><td class="num">100%</td><td class="num">100%</td></tr></table></div>
+
+<div class="card"><h2>Recent 8-K events</h2><table><tr><td class="num">2026-09-30</td><td class="l"><a href="#">New debt obligation</a></td><td class="num">Item 2.03</td><td class="num">sev 3</td></tr></table></div>
+<p class="small">Sources: XBRL tags </p>
+
+<p class="small">Sentinel is an automated research project. Not investment advice. All figures from SEC EDGAR filings; LLM-extracted figures shown only after deterministic verification.</p>
+</div></body></html>
