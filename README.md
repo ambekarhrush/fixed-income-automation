@@ -1,5 +1,7 @@
 # Sentinel — an autonomous US high-yield credit analyst
 
+[Project one-pager (PDF)](docs/project-brief.pdf) · [Editable brief](docs/project-brief.md)
+
 Sentinel covers a universe of US high-yield issuers every weekday, end to end, with no manual steps:
 
 1. **Fundamentals** pulled from SEC EDGAR XBRL (leverage, coverage, FCF, maturity wall, liquidity runway)
